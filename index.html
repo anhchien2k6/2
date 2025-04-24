@@ -2,112 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="CV xin việc Description" content="CV xin việc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="CV, xin việc, html, css">
-    <meta name="author" content="Nguyễn Anh Chiến">
-    <title>CV xin việc</title>
-    <link rel="icon" type="image/jpg" href="2.jpg">
+    <title>Hộp Thư Tương Lai</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: rgb(191, 205, 224);">
-
-    <!--9 loại định dạng văn bản-->
-    <p>Đây là văn bản <b>in đậm</b></p>
-    <p>Đây là văn bản <i>in nghiêng</i></p>
-    <p>Đây là văn bản <big>nhỏ</big></p>
-    <p>Đây là văn bản <small>lớn</small></p>
-    <p>Đây là văn bản <sub>Subscrip</sub></p>
-    <p>Đây là văn bản <ins>insert</ins></p>
-    <p>Đây là văn bản <del>Delete</del></p>
-    <p>Đây là văn bản <mark>Marke</mark></p>
-    <br>
-    <a>Xem phim Attack on Titan the last attack</a>
- <a href="https://fptplay.vn/xem-video/dai-chien-titan-lan-tan-cong-cuoi-cung-67f8dc5cb03bb0fd41b9de95" target ="blank">
-   tại đây
- </a>
- <br>
- <a href="brrr.html" target="_blank">
-    Bấm vào đây
- </a>
- <br>
- <a href="https://shopvnb.com/ao-cau-long.html" target="blank">
-    <img src="ao.png" hight="10" alt="ao" title="áo cầu lông">
-</a>
-<br>
-<audio loop muted controls>
-    <source src="audio.mp3" type="audio/mpeg">"
-</audio>
-<br>
-<!--Các loại list-->
-<h3> Đây là Unordered List</h3>
-    <ul>
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-    </ul>
-<h3>Đây là Order List</h3>
-    <ol type="1">
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-    </ol>
-<h3>Đây là Description List</h3>
-    <dl>Toán</dl>
-     <dd>
-          <dt>
-            Hình học
-            <dd>Không gian</dd>
-            <dd>Phẳng</dd>
-        </dt>
-        <dt>
-            Đại số
-            <dd>Giải tích</dd>
-            <dd>Xác suất</dd>
-        </dt>
-     </dd>
-     <br>
-<!--Bảng biểu-->
-<table bgcolor="yellow" border="1" width="device-width" hight="100" align="center">
-    <tr bgcolor="lightblue">
-        <th>Toán</th>
-        <th>Hóa</th>
-        <th>Anh</th>
-    </tr>
-    <tr bgcolor="lightgreen" align="center">
-        <th>Văn</th>
-        <th>Sử</th>
-        <th>Địa</th>
-    </tr>
-</table>
-<div>Tôi là Nguyễn Anh Chiến</div>Tôi đang học đại học, trước khi lên đại học, tôi đã từng học cấp 3.
-<br>
-<span style="color:aquamarine">Tôi là Nguyễn Anh Chiến</span>
-Tôi đang học đại học, trước khi lên đại học, tôi đã từng học cấp 3.
-<br>
-<iframe width="100%" src="http://127.0.0.1:5500/chien/web.html"></iframe>
-<br>
-<button style="background-color: aqua; color:lightblack; border-radious: 5px">
-    Submit
-</button>
-<br>
-<form>
-    Đăng nhập
-    <div>
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname">
+<body>
+    <div class="envelope"></div>
+    <div class="typewriter">
+        <div class="paper">
+            <span class="letter"></span>
+        </div>
     </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" >
-    </div>
-</form>
-<p class="le">International school-Viet Nam National University</p>
-<p class="chan">International school-Viet Nam National University</p>
-<p class="le">International school-Viet Nam National University</p>
-<p class="le">International school-Viet Nam National University</p>
-<p id="brrr" class="chan">International school-Viet Nam National University</p>
-<p class="chan">International school-Viet Nam National University</p>
 
+    <script>
+        const letterContent = `
+Chào em cô gái anh mới quen,
+lần gặp đầu tiên, anh đã rất ấn tượng bởi cách nói chuyện của em, nó làm người khác tạm quên đi những vấn đề họ đang gặp phải, ai nói gì thì nói, anh thích câu chuyện của em đấy. Hi vong trong tương lai chúng mình sẽ nói chuyện vô tri với nhau nhiều hơn.
+Rất vui được làm quen với em!`;
+        const letterElement = document.querySelector('.letter');
+        let index = 0;
+
+        function typeLetter() {
+            if (index < letterContent.length) {
+                letterElement.textContent += letterContent[index];
+                index++;
+                setTimeout(typeLetter, 50); // Adjust typing speed here
+            } else {
+                letterElement.style.borderRight = 'none'; // Remove cursor when done
+            }
+        }
+
+        // Start typing after a short delay
+        setTimeout(typeLetter, 1500);
+    </script>
 </body>
 </html>
